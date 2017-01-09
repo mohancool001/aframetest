@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/protyze/aframe-alongpath-component/master/dist/aframe-alongpath-component.min.js"></script>
+    <script src="aframehref.js"></script>
+</head>
+<body>
+<a-scene>
+          <a-assets>
+              <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous" />
+              <img src="pic.jpg" id="sky" />
+              <img src="pic1.jpg" id="world"/>
+              <img src="pic2.jpg" id="a2"/>
+              <img src="picture2.png" id="a3"/>
+              <img src="annauniv.jpg" id="anna"/>
+              <img src="sky.jpg" id="a5"/>
+              <img id="ground" src="pic2.jpg">
+              <a-asset-item id="objt" src="objt.obj"></a-asset-item>
+              <a-asset-item id="mtrl" src="mtrl.mtl"></a-asset-item>
+
+          </a-assets>
+
+            <a-entity obj-model="obj: #objt; mtl:   #mtrl" scale="0.01 0.01 0.013" position="-0.2 1.5 -5"  rotation="-90 0 0" >
+                <a-animation attribute="scale" begin="mouseenter" to="0.019 0.019 0.019"></a-animation>
+              <a-animation attribute ="rotation" dur="5000" to="-90 360 0" easing="linear" repeat="indefinite"></a-animation>
+            </a-entity>
+            <a-entity camera="active:false;near:0.01;userHeight:1.6" wasd-controls="" look-controls="" aframe-injected="" data-aframe-inspector="default-camera" position="" rotation=""></a-entity>
+            </a-entity>
+        <a-sky rotation="0 0 0" src="#a5" material="" geometry="" scale="" position="" visible="">
+            <a-animation attribute ="rotation" dur="10000" to="360 0 0" easing="linear" repeat="indefinite">
+        </a-sky>
+    <a-curvedimage src="#world" height="900" radius="180" theta-length="360" rotation="0 80 0" position="-0.5 -60 500"></a-curvedimage>
+    <a-curvedimage src="#anna" height="700" radius="219" theta-length="360" rotation="0 -100 0" position="-0.5 0 0"></a-curvedimage>
+    <a-image src="#a3" position="-60 35 220" height="400" width="600"></a-image>
+    <a-plane src="#ground" height="3" width="3" rotation="0 -45 0" position="6.06 3.17 -4.28" href="www.google.com" >
+    </a-plane>
+    <a-plane src="#ground" height="3" width="3" rotation="0 -75 0" position="7.57 3.00 1.08" href="www.google.com">
+    </a-plane>
+    <a-plane src="#ground" height="3" width="3" rotation="0 75 0" position="-7.57 3.00 1.08" href="www.google.com">
+    </a-plane>
+    <a-plane src="#ground" height="3" width="3" rotation="0 45 0" position="-6.06 3.17 -4.28" href="www.google.com">
+    </a-plane>
+          <a-entity>
+            <a-camera alongpath="path:0,1.6,500 -0.5,1.6,250 0,1,0; closed:false; dur:10000; delay:4000; inspector:false;">
+              <a-cursor color="red"></a-cursor>
+            </a-camera>
+          </a-entity>
+    </a-scene>
+</body>
+</html>
